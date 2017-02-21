@@ -25,7 +25,6 @@ public class BoardServiceTest {
 	
 	@Test
 	public void testCreate() throws Exception{
-
 		board.setTitle("새로운 글을 넣습니다.");
 		board.setContent("새로운 글을 넣습니다.");
 		board.setWriter("user00");
@@ -34,8 +33,6 @@ public class BoardServiceTest {
 	
 	@Test
 	public void testUpdate() throws Exception{
-
-		
 		board.setBno(4);
 		board.setTitle("수정된 글 입니다.");
 		board.setContent("수정 테스트");
