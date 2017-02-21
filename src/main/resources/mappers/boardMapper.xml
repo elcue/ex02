@@ -17,7 +17,7 @@
 					,#{writer} )
 	</insert>
 	
-	<select id="read" resultType="org.zerock.domain.BoardVO">
+    <select id="read" resultType="org.zerock.domain.BoardVO">
 		SELECT 
 				bno
 				,title
@@ -42,7 +42,7 @@
 			WHERE bno = #{bno}
 	</delete>
 	
-	<select id="listALl" resultType="org.zerock.domain.BoardVO">
+	<select id="listAll" resultType="org.zerock.domain.BoardVO">
 		<![CDATA[
 			SELECT
 					bno
