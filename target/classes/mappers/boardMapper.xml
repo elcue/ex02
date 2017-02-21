@@ -56,4 +56,36 @@
 			ORDER BY bno DESC, regdate DESC			
 		]]>
 	</select>
+	<!-- typeAliases를 사용해서 resultType 설정을 축약해서 사용할 수 있다. -->
+	<select id="listPage" resultType="BoardVO">
+		<![CDATA[
+			SELECT
+					bno
+					,title
+					,content
+					,writer
+					,regdate
+					,viewcnt
+			FROM tbl_board
+			WHERE bno > 0
+			ORDER BY bno DESC, regdate DESC
+			LIMIT #{page}, 10
+		]]>
+	</select>
+	
+	<select id="listCriteria" resultType="BoardVO">
+		<![CDATA[
+			SELECT
+					bno
+					,title
+					,content
+					,writer
+					,regdate
+					,viewcnt
+			FROM tbl_board
+			WHERE bno > 0
+			ORDER BY bno DESC, regdate DESC
+			LIMIT #{pageStart}, #{perPageNum}
+		]]>
+	</select>
 </mapper>
