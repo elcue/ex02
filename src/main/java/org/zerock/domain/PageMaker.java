@@ -1,5 +1,8 @@
 package org.zerock.domain;
 
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
 /**
  * SpringBoard 
  * 클래스명 : PageMaker.java
@@ -94,4 +97,14 @@ public class PageMaker {
 		this.cri = cri;
 	}
 	
+	public String makeQuery(int page){
+		
+		UriComponents uriComponents =
+				UriComponentsBuilder.newInstance()
+				.queryParam("page", page)
+				.queryParam("perPageNum", cri.getPerPageNum())
+				.build();
+		
+		return uriComponents.toUriString();
+	}
 }

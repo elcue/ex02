@@ -29,5 +29,8 @@ public interface BoardDAO {
 	
 	//페이징에 필요한 startNum과 PageNum을 가져오기 위함.
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+	
+	//totalCount를 반환할 수 있게 처리하기 위함.
+	public int countPaging(Criteria cri) throws Exception;
 
 }
