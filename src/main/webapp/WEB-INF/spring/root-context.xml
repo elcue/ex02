@@ -32,4 +32,7 @@
 	<!-- 스프링이 패키지를 스캔해서 빈으로 등록 -->
 	<context:component-scan base-package="org.zerock.persistence"/>
 	
+	<!-- 서비스 패키지를 자동으로 인식할 수 있도록 설정 -->
+	<context:component-scan base-package="org.zerock.service"/>
+	
 </beans>
