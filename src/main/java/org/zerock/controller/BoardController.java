@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.domain.BoardVO;
 import org.zerock.service.BoardService;
@@ -55,5 +56,13 @@ public class BoardController {
 		logger.info("show all list.............................");
 		
 		model.addAttribute("list", service.listAll());
+	}
+	
+	@RequestMapping(value="/read", method=RequestMethod.GET)
+	public void read(@RequestParam("bno") int bno, Model model) throws Exception{
+		//이름없이 데이터를 넣으면 boardVO라는 이름으로 저장됨.
+		model.addAttribute(service.read(bno));
+		//이름 넣어주고 싶으면 밑에처럼 하면된다.
+		//model.addAttribute("example", service.read(bno));
 	}
 }
