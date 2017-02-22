@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.SearchCriteria;
 
 /**
  * SpringBoard 
@@ -32,5 +33,10 @@ public interface BoardDAO {
 	
 	//totalCount를 반환할 수 있게 처리하기 위함.
 	public int countPaging(Criteria cri) throws Exception;
+	
+	//동적 SQL문을 적용하기 위한 메소드 설정
+	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception;
+	
+	public int listSearchCount(SearchCriteria cri) throws Exception;
 
 }
