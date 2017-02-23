@@ -82,6 +82,7 @@
 					,writer
 					,regdate
 					,viewcnt
+					,replycnt
 			FROM tbl_board
 			WHERE bno > 0
 			ORDER BY bno DESC, regdate DESC
@@ -148,4 +149,16 @@
 		  <include refid="search"></include>
 		 
 	</select>  
+	
+	<update id="updateReplyCnt">
+		UPDATE tbl_board
+			SET replycnt = replycnt + #{amount}
+			WHERE bno = #{bno}
+	</update>
+	
+	<update id="updateViewCnt">
+		UPDATE tbl_board
+			SET viewcnt = viewcnt + 1
+			WHERE bno = #{bno}
+	</update>
 </mapper>
