@@ -59,7 +59,20 @@
 			<version>1.5.4</version>
 		</dependency>
 		
+		<!-- 파일업로드 라이브러리 -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.1</version>
+		</dependency>
 		
+		<dependency>
+			<groupId>org.imgscalr</groupId>
+			<artifactId>imgscalr-lib</artifactId>
+			<version>4.2</version>
+		</dependency>
+
+
 		<!-- 자세한 로그를 보기 위한 log4jdbc-log4j2 -->
 		<dependency>
 			<groupId>org.bgee.log4jdbc-log4j2</groupId>

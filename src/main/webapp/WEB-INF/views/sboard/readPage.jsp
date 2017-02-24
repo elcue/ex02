@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 
 <%@include file="../include/header.jsp"%>
-<script type="text/javascript" src="/resources/js/upload.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 <!-- Main content -->
     <style type="text/css">
     .popup {position: absolute;}
@@ -114,7 +112,7 @@
 		  <!-- timeline time label -->
 		<li class="time-label" id="repliesDiv">
 		  <span class="bg-green">
-		     Replies List<small id='replycntSmall'> [ ${boardVO.replycnt} ] </small> 
+		    Replies List <small id='replycntSmall'> [ ${boardVO.replycnt} ] </small>
 		    </span>
 		  </li>
 		</ul>
@@ -157,6 +155,8 @@
 </section>
 <!-- /.content -->
 
+<script type="text/javascript" src="/resources/js/upload.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
 
 <script id="templateAttach" type="text/x-handlebars-template">
 <li data-src='{{fullName}}'>

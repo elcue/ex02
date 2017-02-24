@@ -6,41 +6,42 @@ import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.SearchCriteria;
 
-/**
- * SpringBoard 
- * 클래스명 : BoardDAO.java
- * 작성자 : elcue
- * 작성일 : 2017. 2. 21.
- * 클래스 소개 : board 인터페이스
- */
 public interface BoardDAO {
-	
-	public void create(BoardVO vo) throws Exception;
-	
-	public BoardVO read(Integer bno) throws Exception;
-	
-	public void update(BoardVO vo) throws Exception;
-	
-	public void delete(Integer bno) throws Exception;
-	
-	public List<BoardVO> listAll() throws Exception;
-	
-	//페이징 처리를 위한 ListPage
-	public List<BoardVO> listPage(int page) throws Exception;
-	
-	//페이징에 필요한 startNum과 PageNum을 가져오기 위함.
-	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
-	
-	//totalCount를 반환할 수 있게 처리하기 위함.
-	public int countPaging(Criteria cri) throws Exception;
-	
-	//동적 SQL문을 적용하기 위한 메소드 설정
-	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception;
-	
-	public int listSearchCount(SearchCriteria cri) throws Exception;
-	
-	public void updateReplyCnt(Integer bno, int amount) throws Exception;
-	
-	public void updateViewCnt(Integer bno) throws Exception;
 
+  public void create(BoardVO vo) throws Exception;
+
+  public BoardVO read(Integer bno) throws Exception;
+
+  public void update(BoardVO vo) throws Exception;
+
+  public void delete(Integer bno) throws Exception;
+
+  public List<BoardVO> listAll() throws Exception;
+
+  public List<BoardVO> listPage(int page) throws Exception;
+
+  public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+
+  public int countPaging(Criteria cri) throws Exception;
+  
+  //use for dynamic sql
+  
+  public List<BoardVO> listSearch(SearchCriteria cri)throws Exception;
+  
+  public int listSearchCount(SearchCriteria cri)throws Exception;
+  
+  
+  public void updateReplyCnt(Integer bno, int amount)throws Exception;
+  
+  
+  public void updateViewCnt(Integer bno)throws Exception;
+  
+  public void addAttach(String fullName)throws Exception;
+  
+  public List<String> getAttach(Integer bno)throws Exception;  
+   
+  public void deleteAttach(Integer bno)throws Exception;
+  
+  public void replaceAttach(String fullName, Integer bno)throws Exception;
+  
 }
