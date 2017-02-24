@@ -32,5 +32,16 @@
 		<beans:constructor-arg value="D:\\upload"/>
 	</beans:bean>
 	
+	<!-- 인터셉터 설정 추가 -->
+	<beans:bean id="sampleInterceptor" class="org.zerock.interceptor.SampleInterceptor"/>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/doA"/>
+			<mapping path="/doB"/>
+			<beans:ref bean="sampleInterceptor"/>
+		</interceptor>
+	</interceptors>
+	
 	
 </beans:beans>
