@@ -23,7 +23,7 @@ import org.zerock.service.UserService;
 public class AuthInterceptor extends HandlerInterceptorAdapter{
 	
 	@Inject private UserService service;
-	
+	private static final String LOGIN = "login";
 	private static final Logger logger = LoggerFactory.getLogger(AuthInterceptor.class);
 	
 	@Override
@@ -31,7 +31,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 		
 		HttpSession session = request.getSession();
 		
-		if(session.getAttribute("login") == null){
+		if(session.getAttribute(LOGIN) == null){
 			logger.info("current user is not logined");
 			
 			saveDest(request);
@@ -44,7 +44,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 				logger.info("USERVO: " +userVO);
 				
 				if(userVO != null){
-					session.setAttribute("login", userVO);
+					session.setAttribute(LOGIN, userVO);
 					return true;
 				}
 			}

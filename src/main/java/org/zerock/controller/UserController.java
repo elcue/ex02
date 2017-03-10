@@ -52,10 +52,22 @@ public class UserController {
 			
 			service.keepLogin(vo.getUid(), session.getId(), sessionLimit);
 		}
+		
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@"+vo.getUid()+"@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public void logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws Exception{
+	public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws Exception{
 		Object obj = session.getAttribute("login");
 		
 		if(obj != null){
@@ -73,6 +85,8 @@ public class UserController {
 				service.keepLogin(vo.getUid(), session.getId(), new Date());
 			}
 		}
+		
+		return "redirect:/sboard/list";
 	}
 
 }

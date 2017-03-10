@@ -51,6 +51,5 @@ public class UserDAOImpl implements UserDAO{
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".checkUserWithSessionKey", value);
 	}
-	
 
 }

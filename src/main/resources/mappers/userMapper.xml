@@ -27,5 +27,4 @@
 			AND sessionlimit > now()
 	</select>
 	
-	
 </mapper>

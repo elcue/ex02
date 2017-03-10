@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
    
 <!DOCTYPE html>
 <html>
@@ -463,4 +464,16 @@
             <li><a href="#">Forms</a></li>
             <li class="active">General Elements</li>
           </ol>
+	      <c:if test="${login.uid != null }">
+          <h4>${login.uid } 님 반갑습니다!</h4>
+          <input type="button" onclick="logout();" value="로그아웃"/>
+          </c:if>
+
         </section>
+        
+        <script>
+        function logout(){
+        	self.location="/user/logout";
+        }
+        
+        </script>
